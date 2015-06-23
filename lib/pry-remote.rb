@@ -283,7 +283,7 @@ module PryRemote
 
       @wait = params[:wait]
       @persist = params[:persist]
-      @capture = params[:capture]
+      @capture = false
 
       Pry.initial_session_setup unless params[:f]
     end
