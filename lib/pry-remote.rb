@@ -319,7 +319,7 @@ module PryRemote
     # @param [IO] output Object pry-debug will send its output to
     def connect(input = Pry.config.input, output = Pry.config.output)
       local_ip = UDPSocket.open {|s| s.connect(@host, 1); s.addr.last}
-      DRb.start_service "druby://#{local_ip}:0"
+      DRb.start_service "druby://#{local_ip}:9877"
       client = DRbObject.new(nil, uri)
 
       cleanup(client)
